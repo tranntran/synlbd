@@ -1,0 +1,26 @@
+# log in
+ssh tnt5276@submit.aci.ics.psu.edu
+
+# check status for user 
+qstat -u tnt5276
+
+# change directory cd
+# create new folder mkdir
+
+# transfer code up
+scp pbs.pbs nkh8@submit.aci.ics.psu.edu:~/work/dpqr/pbs1.pbs
+scp src/simulation_bias_var_*.R nkh8@submit.aci.ics.psu.edu:~/work/dpqr/src/
+scp src/compare_method_accuracy_v2_lbd_*.R nkh8@submit.aci.ics.psu.edu:~/work/dpqr/src/
+scp src/methods.R tnt5276@submit.aci.ics.psu.edu:~/work/lbd/src/
+
+## transfer code down
+# window syntax
+scp -r tnt5276@submit.aci.ics.psu.edu:~/work/dpqr/output/compare_method_accuracy_v2_extended_eps1_*.Rdata C:/Users/ttran/OneDrive/Desktop/Code/dpqr/output/
+scp -r tnt5276@submit.aci.ics.psu.edu:~/work/dpqr/output/compare_method_accuracy_v2_extended_eps1_*.Rdata C:/Users/'Tran Tran'/Desktop/Code/dpqr/output/
+
+# mac syntax
+scp -r tnt5276@submit.aci.ics.psu.edu:/storage/home/tnt5276/work/dpqr/output/"compare_method_accuracy_v2_lbd_eps1_*.Rdata" ~/Documents/code/dpqr/output/simulation_compare_method_accuracy_v2_lbd/
+
+scp -r tnt5276@submit.aci.ics.psu.edu:/storage/home/tnt5276/work/dpqr/output/"simulation_bias_var_eps1_*.Rdata" ~/Documents/code/dpqr/output/simulation_bias_var/
+
+scp -r tnt5276@submit.hpc.psu.edu:/storage/home/tnt5276/work/synlbd_sics/output/239/239_syn_data_year_mu_seed2.csv ~/Documents/code/lbd/output/239
