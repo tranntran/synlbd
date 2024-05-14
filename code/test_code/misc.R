@@ -1,0 +1,5 @@
+library(tidyr)
+library(dplyr)
+x <- read.table("georef17.txt", header=TRUE, sep = ',')
+x = separate_wider_delim(x, cols = ctyname, delim = ", ", names = c("cty1", "state"))
+dt = x %>% group_by(st, state) %>% summarise(n = n())
