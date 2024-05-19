@@ -492,7 +492,7 @@ stepwiseKNG1 = function(data, total_eps, median_eps = NULL, tau, scale = 1e-4, C
         for (i in 1:length(tau_lower)){
             new_tau = tau_lower[i]
             print(new_tau)
-            out = constrKNG(init = list(check_beta-1e-2, check_beta/2), ep = ep, 
+            out = constrKNG(init = list(check_beta-1e-2, (check_beta-1e-2), ep = ep, 
                             tau = new_tau, X = X, Y = Y, h = h, nbatch = nbatch, 
                             scale = scale, check_beta = check_beta, Cx = Cx, nchains = 2,
                             check_data = check_data, ub = ub, lb = lb, method = method,
@@ -515,7 +515,7 @@ stepwiseKNG1 = function(data, total_eps, median_eps = NULL, tau, scale = 1e-4, C
         for (i in 1:length(tau_upper)){
             new_tau = tau_upper[i]
             print(new_tau)
-            out = constrKNG(init = list(check_beta+1e-2, check_beta*1.25), ep = ep, 
+            out = constrKNG(init = list(check_beta+1e-2, check_beta+1e-2), ep = ep, 
                             tau = new_tau, X = X, Y = Y, h = h, nbatch = nbatch, 
                             scale = scale, check_beta = check_beta, Cx = Cx, nchains = 2,
                             check_data = check_data, ub = ub , lb = lb, method = method,
